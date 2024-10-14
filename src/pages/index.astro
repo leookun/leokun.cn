@@ -10,7 +10,7 @@ const groups = await getGroups();
   >
     {
       Array.from(groups.entries()).map(([key, value]) => (
-        <section class="bg-#F6F6F6 py-20px px-15px overflow-hidden pb-25px tracking-wide ">
+        <section class="bg-#f9f9f9 py-20px px-15px overflow-hidden pb-25px tracking-wide ">
           <div class="flex justify-between mb-10px px-10px">
             <h4 class=" text-#555 font-bold text-16px">{key}</h4>
             <div class="bg-#F6EACF px-8px py-2px flex flex-row items-center gap-4px">
@@ -22,7 +22,7 @@ const groups = await getGroups();
             {value.slice(0, 5).map(post => (
               <li class="truncate hover:bg-black/3  px-10px rounded-md group cursor-pointer">
                 <a href={post.slug} class="  ">
-                  <span class="text-#909090 mr-4px">10-12</span>
+                  <span class="text-#777 mr-4px">10-12</span>
                   <span class="group-hover:text-block  text-#111 ">
                     {post.data.title}
                   </span>
