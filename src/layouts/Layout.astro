@@ -107,9 +107,6 @@ const structuredData = {
       set:html={JSON.stringify(structuredData)}
     />
 
-
-
-
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
       // include google-site-verification tag in the heading
@@ -121,9 +118,8 @@ const structuredData = {
         />
       )
     }
-
   </head>
   <body>
-    <slot />
+    <main><slot /></main>
   </body>
 </html>
