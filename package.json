@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "dev": "astro dev --force --host 0.0.0.0",
-    "build2": "astro build --force",
+    "astro-build": "astro build --force",
     "build": "./build.sh",
     "preview": "astro preview",
     "sync": "astro sync",
