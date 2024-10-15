@@ -21,8 +21,8 @@ const groups = await getGroups();
           <ul class="text-14px leading-2em">
             {value.slice(0, 5).map(post => (
               <li class="truncate hover:bg-black/3  px-10px rounded-md group cursor-pointer">
-                <a href={post.slug} class="  ">
-                  <span class="text-#555 mr-4px">10-12</span>
+                <a href={post.slug.replace(/.+?\//, "/")} >
+                  <span class="text-#555 mr-4px">{post.data.pubTimeText.slice(5, 10)}</span>
                   <span class="group-hover:text-block  text-#090909 ">
                     {post.data.title}
                   </span>
