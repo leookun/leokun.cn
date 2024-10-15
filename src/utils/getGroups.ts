@@ -7,6 +7,7 @@ export default async () => {
   const posts = await getCollection("bolg");
   for (const post of posts) {
 
+    const collection = post.id.split("/")?.[1];
     const secondFolder = post.slug.split("/")?.[1];
     const displayName = post.slug
       .split("/")
@@ -17,7 +18,8 @@ export default async () => {
     const normalizedPost = {
       ...post,
       displayName,
-      collection: secondFolder,
+      secondFolder,
+      collection,
       data: {
         title: displayName,
         ...post.data,
