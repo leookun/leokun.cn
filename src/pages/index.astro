@@ -15,10 +15,10 @@ const collections = await groupByCollection(posts);
         <section class="border-1px border-#eee rounded-md py-20px px-15px overflow-hidden pb-25px tracking-wide ">
           <div class="flex justify-between mb-10px px-10px">
             <h3 class=" text-#000 font-bold text-16px">{collection}</h3>
-            <figcaption class="bg-#F6EACF px-8px py-2px flex flex-row items-center gap-4px">
+            {/* <figcaption class="bg-#F6EACF px-8px py-2px flex flex-row items-center gap-4px">
               <span class="w-11px h-11px bg-#FBBF24 rounded-full" />
               <span class="text-12px  text-#333 font-mono">合集</span>
-            </figcaption>
+            </figcaption> */}
           </div>
           <ul class="text-14px leading-2em">
             {collections[collection].slice(0, 5).map(post => (
