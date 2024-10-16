@@ -1,0 +1,32 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import { GetStaticPaths } from "astro";
+
+import getPosts from "@utils/getPosts";
+export const getStaticPaths = (async () => {
+  const posts = await getPosts();
+  return posts.map(post => {
+    console.log(post.slug.replace(/.+?\//, "/"));
+    return {
+      params: {
+        slug: post.slug.replace(/.+?\//, "/"),
+      },
+      props: { post },
+    };
+  });
+}) satisfies GetStaticPaths;
+const { post } = Astro.props;
+
+const { Content } = await post.render();
+console.log(post);
+// const { entry } = Astro.props;
+---
+
+<Layout title={`404 Not Found | ${SITE.title}`}>
+  <div
+    class="container mx-auto  w-full md:w-960px md:shadow-md bg-white min-h-1080px md:py-30px md:px-50px px-10px py-10px mb-20px pb-100px"
+  >
+    <Content />
+  </div>
+</Layout>

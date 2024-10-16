@@ -4,7 +4,9 @@ import getSortedPosts from "./getSortedPosts";
 /*获取首页集合 */
 export default async () => {
   const newPost=[]
-  const posts = await getCollection("bolg");
+  const posts = (await getCollection("bolg")).filter(item=>{
+    return item.id.startsWith("leokun.cn")
+  });
   for (const post of posts) {
 
     const collection = post.id.split("/")?.[1];
@@ -31,4 +33,14 @@ export default async () => {
   const sortedPosts = getSortedPosts(newPost);
 
   return sortedPosts;
+};
+export const groupByCollection = (posts) => {
+  return posts.reduce((acc, post) => {
+    const collection = post.collection;
+    if (!acc[collection]) {
+      acc[collection] = [];
+    }
+    acc[collection].push(post);
+    return acc;
+  }, {});
 };
