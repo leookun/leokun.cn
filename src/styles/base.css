@@ -9,6 +9,9 @@ html {
 .prose {
     color: var(--tw-prose-body);
 }
+.prose > h2:first-child {
+    margin-top: 0;
+}
 
 .prose :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
     margin-top: 1.25em;
@@ -151,7 +154,7 @@ html {
     color: var(--tw-prose-headings);
     font-weight: 700;
     font-size: 1.5em;
-    margin-top: 2em;
+    margin-top: 1.5em;
     margin-bottom: 1em;
     line-height: 1.3333333
 }
