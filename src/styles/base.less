@@ -1,0 +1,121 @@
+
+:root {
+    --color-main-50: #f7f9fb;
+    --color-main-100: #f1f5f9;
+    --color-main-200: #e2e8f0;
+    --color-main-300: #cbd5e1;
+    --color-main-350: #94a3b8cc;
+    --color-main-400: #94a3b8;
+    --color-main-500: #64748b;
+    --color-main-600: #475569;
+    --color-main-700: #334155;
+    --color-main-800: #1e293b
+}
+html {
+    overflow-y: scroll;
+    line-height: 1.5;
+    color: var(--color-main-800);
+    font-family: "FiraCode", system-ui, -apple-system, "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", "Hiragino Sans GB", "微软雅黑", STHeiti, "WenQuanYi Micro Hei", Arial, SimSun, sans-serif;
+}
+
+
+.container {
+    width: 8.5in;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 0.1in;
+        box-sizing: border-box;
+    }
+}
+code,
+kbd,
+samp,
+pre {
+    font-family: "FiraCode";
+}
+
+@font-face {
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-Medium.woff2");
+}
+
+
+.prose {
+    line-height: 1.5;
+    font-size: 0.16in;
+ 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+        margin: 0.5em 0;
+    }
+
+    h1 {
+        font-size: 2em;
+        position: relative;
+
+        &:after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: #eee;
+            position: absolute;
+            bottom: -0.2em;
+            left: 0;
+        }
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    h5 {
+        font-size: 0.875em;
+    }
+
+    h6 {
+        font-size: 0.75em;
+    }
+
+    ul {
+        padding-left: 1em;
+
+        li {
+            list-style: disc;
+        }
+    }
+
+    p {
+        margin: 0.5em 0;
+    }
+
+    img {
+        border-radius: 6px;
+        height: auto;
+        max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        img {
+            border-radius: 0;
+            max-width: 100%;
+        }
+    }
+
+}

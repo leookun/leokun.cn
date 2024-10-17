@@ -8,29 +8,29 @@ const collections = await groupByCollection(posts);
 
 <Layout>
   <div
-    class="container  grid grid-cols-2  gap-.2in  bg-white "
+    class="container  grid grid-cols-1  gap-.1in md:grid-cols-2  bg-white !py-.5in"
   >
     {
       Object.keys(collections).map(collection => (
-        <section class="border-1px border-#eee rounded-md py-20px px-15px overflow-hidden pb-25px tracking-wide ">
+        <section class="border-1px rounded-md py-20px px-15px overflow-hidden pb-25px tracking-wide ">
           <div class="flex justify-between mb-10px px-10px">
-            <h3 class=" text-#000 font-bold text-16px">{collection}</h3>
+            <h3 class=" font-bold text-16px">{collection}</h3>
           </div>
-          <ul class="text-14px leading-2em">
+          <ul class="text-16px leading-1em">
             {collections[collection].slice(0, 5).map(post => (
-              <li class="truncate hover:bg-black/3  px-10px rounded-md group cursor-pointer">
-                <a href={post.slug.replace(/.+?\//, "/")}>
-                  <span class="text-#555 mr-4px">
+              <li class="truncate hover:bg-black/3  px-10px py-7px rounded-md group cursor-pointer">
+                <a href={post.slug.replace(/.+?\//, "/")} class="w-full block">
+                  <span class="font-normal opacity-80 ">
                     {post.data.pubTimeText.slice(5, 10)}
                   </span>
-                  <span class="group-hover:text-block  text-#090909 ">
+                  <span class="group-hover:text-block ">
                     {post.data.title}
                   </span>
                 </a>
               </li>
             ))}
           </ul>
-          <div class="flex flex-row justify-between items-center text-12px text-#555 px-10px mt-15px font-mono">
+          <div class="flex flex-row justify-between items-center text-14px  px-10px mt-15px opacity-80 ">
             <figcaption>最后发布于前天深夜 3 点</figcaption>
             <figcaption>99+</figcaption>
           </div>
